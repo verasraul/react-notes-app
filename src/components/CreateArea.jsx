@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
-function CreateArea() {
+
+function CreateArea(props) {
     // initiate an empty note obj with 2 properties.
     // use useState hook to change state of obj onChange.
     const [note, setNote] = useState({
@@ -22,6 +25,15 @@ function CreateArea() {
         })
     }
 
+    function submitNote(event) {
+        props.onAdd(note);
+        setNote({
+            title: "",
+            content: ""
+        });
+        event.preventDefault(); // prevent entire page reload after submitting request, only component reloads.
+    }
+
   return (
     <div>
         <form className='create-note'>
@@ -40,6 +52,9 @@ function CreateArea() {
                 value={note.content}
                 placeholder='What&#39;s on your mind'
             />
+            <Fab onClick={submitNote}>
+                <AddIcon />
+            </Fab>
         </form>
     </div>
   )
