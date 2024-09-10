@@ -9,10 +9,18 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   function addNotes(newNote) {
-    setNotes(prevNotes => {
-      return [...prevNotes, newNote];
+    setNotes(prevNote => {
+      return [...prevNote, newNote];
     });
   }
+
+  function deleteNote(id) {
+    setNotes(prevNote => {
+      return prevNote.filter((noteItem, index) => {
+        return index !==id;
+      });
+    });
+  };
 
   return (
     <div className="App">
@@ -25,6 +33,7 @@ function App() {
           id={index}
           title={noteItem.title}
           content={noteItem.content}
+          onDelete={deleteNote}
         />
         )
       })}
