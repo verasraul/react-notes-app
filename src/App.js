@@ -10,7 +10,7 @@ function App() {
     setNotes(prevNotes => {
       return [...prevNotes, newNote];
     });
-  };
+  }
 
   return (
     <div className="App">
