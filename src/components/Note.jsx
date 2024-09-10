@@ -4,7 +4,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 function Note(props) {
   return (
     <div className='note'>
-        Note.
+        <h1>{props.title}</h1>
+        <p>props.content</p>
         <DeleteIcon />
     </div>
   )
