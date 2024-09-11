@@ -78,3 +78,17 @@ footer p {
     margin: 16px;
     float: left;
 }
+
+.note p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    
+}
