@@ -11,6 +11,8 @@ function CreateArea(props) {
         content: ""
     });
 
+    const [isExpanded, setExpanded] = useState(false);
+
     // hanlde onChange event (input).
     function handleChange(event) {
         // destructure note obj properties received from event target <input> data.
@@ -34,20 +36,28 @@ function CreateArea(props) {
         event.preventDefault(); // prevent entire page reload after submitting request, only component reloads.
     }
 
+    function expand() {
+        setExpanded(true);
+    };
+
   return (
     <div>
         <form className='create-note'>
-            <input
-                type='text'
-                name='title'
-                onChange={handleChange}
-                // apply input value to 'note.title' property in the note obj.
-                value={note.title}
-                placeholder='Title'
-            />
+            {isExpanded && (
+                <input
+                    type='text'
+                    name='title'
+                    onChange={handleChange}
+                    // apply input value to 'note.title' property in the note obj.
+                    value={note.title}
+                    placeholder='Title'
+                />
+            )}
+
             <textarea 
                 name='content'
-                rows='3'
+                rows={isExpanded ? 3 :1}
+                onClick={expand}
                 onChange={handleChange}
                 value={note.content}
                 placeholder='What&#39;s on your mind'
