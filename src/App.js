@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Header from "./components/Header";
 import CreateArea from "./components/CreateArea";
 import Note from "./components/Note";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
         />
         )
       })}
-    
+    <Footer />
     </div>
   );
 }
