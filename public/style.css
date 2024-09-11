@@ -55,3 +55,26 @@ form.create-note button {
     cursor: pointer;
     outline: none;
 }
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+footer p {
+    color: white;
+
+}
+
+.note {
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+}
